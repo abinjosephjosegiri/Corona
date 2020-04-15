@@ -6,7 +6,11 @@
     <title>Login And Signup</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css">
     <link rel="stylesheet" href="main.css">
-
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
 </head>
 <body>
    <div id=con>
@@ -35,10 +39,10 @@
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <span>or use your account</span>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input id="email-login" type="email" placeholder="Email" />
+            <input id="password-login" type="password" placeholder="Password" />
             <a href="#">Forgot your password?</a>
-            <button>Sign In</button>
+            <button  id="btn-login">Sign In</button>
         </form>
     </div>
     <div class="overlay-container">
@@ -66,7 +70,20 @@
             <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>
         </p>
     </footer>
+    <script src="/__/firebase/7.14.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.14.0/firebase-analytics.js"></script>
+    <script src="/__/firebase/init.js"></script>
 -->    
     <script src="main.js"></script>
+    <script src="fb.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user){
+            if(user)
+            {
+                window.location.href = "home.html";
+
+            }
+        });
+    </script>
 </body>
 </html>

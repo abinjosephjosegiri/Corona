@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+#con{
+	
+	margin: 0px auto;
+}
+@media screen and (max-width:auto){
+	#con{
+		width: 100%;
+	}
 
+}
 
 * {
 	box-sizing: border-box;
@@ -185,3 +194,4 @@ button.ghost {
 .container.right-panel-active .overlay-left{
 	transform: translateX(0);
 }
+@media screen and (max-width:959px); 

@@ -26,8 +26,8 @@
             <button id="signUp" type="submit">Sign Up</button>
         </form>
     </div>
-    <div class="form-container sign-in-container">
-        <form action="#" >
+    <div id="modal-login" class="form-container sign-in-container">
+        <form id="login-form">
             <h1>Sign in</h1>
             <div class="social-container">
                 <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -35,10 +35,10 @@
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <span>or use your account</span>
-            <input type="email" placeholder="Email" required />
-            <input type="password" placeholder="Password" required/>
+            <input type="email" placeholder="Email" id="login-email" required />
+            <input type="password" placeholder="Password" id="login-password" required/>
             <a href="#">Forgot your password?</a>
-            <button id="signIn" onclick="SignIn()" >Sign In</button>
+            <button id="signIn" >Sign In</button>
         </form>
     </div>
     <div class="overlay-container">

@@ -19,6 +19,9 @@ signupForm.addEventListener('submit', (e) => {
         }
     )
     alert("congratulations " + name  +" You Are Signed\n Now You Can Sign In" );
-  //  window.location.replace("index.html");
+   //window.location.replace("home.html");
+   
   location.reload();
+  auth.signOut()
+  
 });

@@ -11,8 +11,8 @@
 <body>
    
     <div class="container" id="container">
-    <div class="form-container sign-up-container">
-        <form action="#">
+    <div id="signup-modal" class="form-container sign-up-container">
+        <form  id="SignUpForm">
             <h1>Create Account</h1>
             <div class="social-container">
                 <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -20,14 +20,14 @@
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <span>or use your email for registration</span>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button>Sign Up</button>
+            <input type="text" id="signup-name" placeholder="Name" required/>
+            <input type="email" id="signup-email" placeholder="Email" required/>
+            <input type="password" id="signup-password" placeholder="Password" required/>
+            <button id="signUp" type="submit">Sign Up</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
-        <form action="#">
+        <form action="#" >
             <h1>Sign in</h1>
             <div class="social-container">
                 <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -35,10 +35,10 @@
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <span>or use your account</span>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input type="email" placeholder="Email" required />
+            <input type="password" placeholder="Password" required/>
             <a href="#">Forgot your password?</a>
-            <button>Sign In</button>
+            <button id="signIn" onclick="SignIn()" >Sign In</button>
         </form>
     </div>
     <div class="overlay-container">
@@ -46,12 +46,12 @@
             <div class="overlay-panel overlay-left">
                 <h1>Welcome Back!</h1>
                 <p>To keep connected with us please login with your personal info</p>
-                <button class="ghost" id="signIn">Sign In</button>
+                <button class="ghost" id="signIn-sll">Sign In</button>
             </div>
             <div class="overlay-panel overlay-right">
                 <h1>Hello, Friend!</h1>
                 <p>Enter your personal details and start journey with us</p>
-                <button class="ghost" id="signUp">Sign Up</button>
+                <button class="ghost"  id="signUp-slr">Sign Up</button>
             </div>
         </div>
     </div>
@@ -65,7 +65,27 @@
             <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>
         </p>
     </footer>
--->    
+--> 
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyB9xIEkm43EEWZ9lIv9y0KimfOh45PhEM4",
+            authDomain: "corona-5f69b.firebaseapp.com",
+            databaseURL: "https://corona-5f69b.firebaseio.com",
+            projectId: "corona-5f69b",
+            storageBucket: "corona-5f69b.appspot.com",
+            messagingSenderId: "100212607774",
+            appId: "1:100212607774:web:7c19bb826e8b44515e170f",
+            measurementId: "G-ZDC97T6T0G"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db =firebase.firestore();
+    </script>
     <script src="main.js"></script>
-</body>
+    <script src="app.js"></script>
+    </body>
 </html>

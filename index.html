@@ -6,14 +6,10 @@
     <title>Login And Signup</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css">
     <link rel="stylesheet" href="main.css">
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+
 </head>
 <body>
-   <div id=con>
+   
     <div class="container" id="container">
     <div class="form-container sign-up-container">
         <form action="#">
@@ -39,28 +35,27 @@
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <span>or use your account</span>
-            <input id="email-login" type="email" placeholder="Email" />
-            <input id="password-login" type="password" placeholder="Password" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
             <a href="#">Forgot your password?</a>
-            <button  id="btn-login">Sign In</button>
+            <button>Sign In</button>
         </form>
     </div>
     <div class="overlay-container">
         <div class="overlay">
             <div class="overlay-panel overlay-left">
                 <h1>Welcome Back!</h1>
-                <p>To keep connected with us please login with your personal info. <br>In pgirhone switch to desktop view for better use</p>
+                <p>To keep connected with us please login with your personal info</p>
                 <button class="ghost" id="signIn">Sign In</button>
             </div>
             <div class="overlay-panel overlay-right">
                 <h1>Hello, Friend!</h1>
-                <p>Enter your personal details and start journey with us.<br>In phone switch to desktop view for better use</p>
+                <p>Enter your personal details and start journey with us</p>
                 <button class="ghost" id="signUp">Sign Up</button>
             </div>
         </div>
     </div>
     </div>
-</div>
 <!--
     <footer>
         <p>
@@ -70,20 +65,7 @@
             <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>
         </p>
     </footer>
-    <script src="/__/firebase/7.14.0/firebase-app.js"></script>
-    <script src="/__/firebase/7.14.0/firebase-analytics.js"></script>
-    <script src="/__/firebase/init.js"></script>
 -->    
     <script src="main.js"></script>
-    <script src="fb.js"></script>
-    <script>
-        firebase.auth().onAuthStateChanged(function(user){
-            if(user)
-            {
-                window.location.href = "home.html";
-
-            }
-        });
-    </script>
 </body>
 </html>

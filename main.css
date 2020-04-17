@@ -2,6 +2,16 @@
 * {
 	box-sizing: border-box;
 }
+.page{
+    
+	display: none;
+     /* allow for content off the bottom of the page */
+    position: fixed;  /* or absolute if the user needs to scroll for more content */
+    
+}
+.active{
+    display: block; 
+}
 body {
 	background: #f6f5f7;
 	display: flex;

@@ -1,9 +1,20 @@
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
     if (user) {
-      console.log('user logged in: ', user);
+      console.log( user.email ,  'is user logged in ' );
+      //document.getElementById(loginandregister).classList.remove('active');
+      var mylogin=document.getElementById("loginandregister");
+      mylogin.classList.remove("active");
+      console.log(mylogin.classList);
+      var myhome=document.getElementById("home");
+      myhome.classList.add("active");
     } else {
       console.log('user logged out');
+      var mylogin=document.getElementById("loginandregister");
+      mylogin.classList.add("active");
+      var myhome=document.getElementById("home");
+      myhome.classList.remove("active");
+
     }
   })
   
@@ -30,8 +41,8 @@ signupForm.addEventListener('submit', (e) => {
     alert("congratulations " + name  +" You Are Signed\n Now You Can Sign In" );
    //window.location.replace("home.html");
    
-  location.reload();
-  auth.signOut()
+  //location.reload();
+  //auth.signOut()
   
 });
 // login
@@ -53,3 +64,6 @@ loginForm.addEventListener('submit', (e) => {
   });
 
 });
+function Logout(){
+  auth.signOut();
+}

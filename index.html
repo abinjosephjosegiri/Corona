@@ -9,53 +9,57 @@
 
 </head>
 <body>
-   
-    <div class="container" id="container">
-    <div id="signup-modal" class="form-container sign-up-container">
-        <form  id="SignUpForm">
-            <h1>Create Account</h1>
-            <div class="social-container">
-                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+    <section class="page active" id="loginandregister" >
+        <div class="container" id="container">
+            <div id="signup-modal" class="form-container sign-up-container">
+                <form  id="SignUpForm">
+                    <h1>Create Account</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your email for registration</span>
+                    <input type="text" id="signup-name" placeholder="Name" required/>
+                    <input type="email" id="signup-email" placeholder="Email" required/>
+                    <input type="password" id="signup-password" placeholder="Password" required/>
+                    <button id="signUp" type="submit">Sign Up</button>
+                </form>
             </div>
-            <span>or use your email for registration</span>
-            <input type="text" id="signup-name" placeholder="Name" required/>
-            <input type="email" id="signup-email" placeholder="Email" required/>
-            <input type="password" id="signup-password" placeholder="Password" required/>
-            <button id="signUp" type="submit">Sign Up</button>
-        </form>
-    </div>
-    <div id="modal-login" class="form-container sign-in-container">
-        <form id="login-form">
-            <h1>Sign in</h1>
-            <div class="social-container">
-                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            <div id="modal-login" class="form-container sign-in-container">
+                <form id="login-form">
+                    <h1>Sign in</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your account</span>
+                    <input type="email" placeholder="Email" id="login-email" required />
+                    <input type="password" placeholder="Password" id="login-password" required/>
+                    <a href="#">Forgot your password?</a>
+                    <button id="signIn" >Sign In</button>
+                </form>
             </div>
-            <span>or use your account</span>
-            <input type="email" placeholder="Email" id="login-email" required />
-            <input type="password" placeholder="Password" id="login-password" required/>
-            <a href="#">Forgot your password?</a>
-            <button id="signIn" >Sign In</button>
-        </form>
-    </div>
-    <div class="overlay-container">
-        <div class="overlay">
-            <div class="overlay-panel overlay-left">
-                <h1>Welcome Back!</h1>
-                <p>To keep connected with us please login with your personal info</p>
-                <button class="ghost" id="signIn-sll">Sign In</button>
-            </div>
-            <div class="overlay-panel overlay-right">
-                <h1>Hello, Friend!</h1>
-                <p>Enter your personal details and start journey with us</p>
-                <button class="ghost"  id="signUp-slr">Sign Up</button>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" id="signIn-sll">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Enter your personal details and start journey with us</p>
+                        <button class="ghost"  id="signUp-slr">Sign Up</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
+    </section>
+    <section class="page " id="home" >
+        <button id="btn_logout" onclick="Logout()">Logout</button>
+    </section>
 <!--
     <footer>
         <p>
@@ -68,7 +72,6 @@
 --> 
 <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
     <script>
         const firebaseConfig = {
@@ -82,9 +85,7 @@
             measurementId: "G-ZDC97T6T0G"
         };
         firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-        const db =firebase.firestore();
-        db.settings({ timestampsInSnapshots: true });
+        const auth = firebase.auth();     
     </script>
     <script src="main.js"></script>
     <script src="app.js"></script>

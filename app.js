@@ -73,7 +73,6 @@ loginForm.addEventListener('submit', (e) => {
     
     // ...
   });
-
 });
 //forget passwod
 function Forgot()
@@ -86,7 +85,7 @@ function Forgot()
   auth.sendPasswordResetEmail(emailAddress).then(() => {
     // Email sent.
     console.log(emailAddress);
-  }).catch(function(error)  {
+  }).catch(function(error){
     // An error happened.
     console.log(error);
   });

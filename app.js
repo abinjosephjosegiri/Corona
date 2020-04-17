@@ -83,10 +83,12 @@ function Forgot()
   if (emailAddress != null){
     alert("password  reset  link not send to your email");
   }
-  auth.sendPasswordResetEmail(emailAddress).then(function() {
+  auth.sendPasswordResetEmail(emailAddress).then(() => {
     // Email sent.
-  }).catch(function(error) {
+    console.log(emailAddress);
+  }).catch(function(error)  {
     // An error happened.
+    console.log(error);
   });
 }
 function Logout(){

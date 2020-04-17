@@ -2,7 +2,6 @@
 auth.onAuthStateChanged(user => {
     if (user) {
       console.log( user.email ,  'is user logged in ' );
-      //document.getElementById(loginandregister).classList.remove('active');
       var mylogin=document.getElementById("loginandregister");
       mylogin.classList.remove("active");
       console.log(mylogin.classList);
@@ -38,7 +37,7 @@ signupForm.addEventListener('submit', (e) => {
         
         }
     )
-    alert("congratulations " + name  +" You Are Signed\n Now You Can Sign In" );
+    alert(name + "Account Created Successfully");
    //window.location.replace("home.html");
    
   //location.reload();

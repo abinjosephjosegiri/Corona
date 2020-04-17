@@ -75,6 +75,20 @@ loginForm.addEventListener('submit', (e) => {
   });
 
 });
+//forget passwod
+function Forgot()
+{
+  var emailAddress = prompt("Enter your Email Id:");
+  console.log(emailAddress);
+  if (emailAddress != null){
+    alert("password  reset  link not send to your email");
+  }
+  auth.sendPasswordResetEmail(emailAddress).then(function() {
+    // Email sent.
+  }).catch(function(error) {
+    // An error happened.
+  });
+}
 function Logout(){
   auth.signOut();
 }

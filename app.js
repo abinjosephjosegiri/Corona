@@ -32,7 +32,6 @@ signupForm.addEventListener('submit', (e) => {
             console.log(cred.user);
             const model =document.querySelector("signup-modal");
             M.Model.getInstance(model).close();
-            alert("congratulations" + name  +"You Are Signed");
             signupForm.reset();
         
         }
@@ -54,12 +53,25 @@ loginForm.addEventListener('submit', (e) => {
   const password = loginForm['login-password'].value;
 
   // log the user in
-  auth.signInWithEmailAndPassword(email, password).then((cred) => {
-    console.log(cred.user);
-    // close the signup modal & reset form
-    const modal = document.querySelector('#modal-login');
-    M.Modal.getInstance(modal).close();
-    loginForm.reset();
+  
+  auth.signInWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorMessage);
+    if (errorCode == "auth/wrong-password")
+    {
+     window.alert("Wrong Password"); //or window.alert(errorMessage);
+    }
+    else if( errorCode == "auth/user-not-found" ){
+      window.alert("User Not Found");//alert(errorMessage); 
+    }
+    else
+    {
+      window.alert(errorMessage);
+    }
+    
+    // ...
   });
 
 });

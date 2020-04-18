@@ -4,6 +4,7 @@ auth.onAuthStateChanged(user => {
       console.log( user.email ,  'is user logged in ' );
       var mylogin=document.getElementById("loginandregister");
       mylogin.classList.remove("active");
+      document.title="Home";
       console.log(mylogin.classList);
       var myhome=document.getElementById("home");
       myhome.classList.add("active");
@@ -13,6 +14,7 @@ auth.onAuthStateChanged(user => {
       mylogin.classList.add("active");
       var myhome=document.getElementById("home");
       myhome.classList.remove("active");
+      document.title="Log In or Sign Up"
 
     }
   })
